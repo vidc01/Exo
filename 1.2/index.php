@@ -18,5 +18,4 @@ function fooBar($max) {
 }
 
 fooBar($max);
-
 ?>
