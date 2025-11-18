@@ -5,7 +5,7 @@ $contact = ["Alice Dupont", "John Doe", "Jean Martin"];
 
     while (($ligne = fgets($fichier)) !== false) {
         $ligne = trim($ligne);
-        if ($ligne === "") continue; // ignore lignes vides
+        if ($ligne === "") continue;
 
         if (!in_array($ligne, $contact)) {
             $contact[] = $ligne;
