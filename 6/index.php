@@ -52,10 +52,30 @@ $dbh = null;
 <table>
     <thead>
         <tr>
-            <th><a href="?sort=nom&order=<?php echo ($sort === 'nom') ? $toggle : 'ASC'; ?>">Nom [↑↓]</a></th>
-            <th><a href="?sort=pays&order=<?php echo ($sort === 'pays') ? $toggle : 'ASC'; ?>">Pays [↑↓]</a></th>
-            <th><a href="?sort=course&order=<?php echo ($sort === 'course') ? $toggle : 'ASC'; ?>">Course [↑↓]</a></th>
-            <th><a href="?sort=temps&order=<?php echo ($sort === 'temps') ? $toggle : 'ASC'; ?>">Temps [↑↓]</a></th>
+            <th>
+                <a href="?sort=nom&order=<?php echo ($sort === 'nom') ? $toggle : 'ASC'; ?>">Nom
+                    <span class="arrow up <?php echo ($sort==='nom' && strtolower($order)==='asc')? 'active' : ''; ?>">▲</span>
+                    <span class="arrow down <?php echo ($sort==='nom' && strtolower($order)==='desc')? 'active' : ''; ?>">▼</span>
+                </a>
+            </th>
+            <th>
+                <a href="?sort=pays&order=<?php echo ($sort === 'pays') ? $toggle : 'ASC'; ?>">Pays
+                    <span class="arrow up <?php echo ($sort==='pays' && strtolower($order)==='asc')? 'active' : ''; ?>">▲</span>
+                    <span class="arrow down <?php echo ($sort==='pays' && strtolower($order)==='desc')? 'active' : ''; ?>">▼</span>
+                </a>
+            </th>
+            <th>
+                <a href="?sort=course&order=<?php echo ($sort === 'course') ? $toggle : 'ASC'; ?>">Course
+                    <span class="arrow up <?php echo ($sort==='course' && strtolower($order)==='asc')? 'active' : ''; ?>">▲</span>
+                    <span class="arrow down <?php echo ($sort==='course' && strtolower($order)==='desc')? 'active' : ''; ?>">▼</span>
+                </a>
+            </th>
+            <th>
+                <a href="?sort=temps&order=<?php echo ($sort === 'temps') ? $toggle : 'ASC'; ?>">Temps
+                    <span class="arrow up <?php echo ($sort==='temps' && strtolower($order)==='asc')? 'active' : ''; ?>">▲</span>
+                    <span class="arrow down <?php echo ($sort==='temps' && strtolower($order)==='desc')? 'active' : ''; ?>">▼</span>
+                </a>
+            </th>
         </tr>
     </thead>
 <?php foreach($data as $value) { ?>
@@ -67,3 +87,5 @@ $dbh = null;
     </tr>
 <?php }  ?>
 </table>
+<style>.arrow.active{color:red!important} th a{ text-decoration:none; color:black; }</style>
+
