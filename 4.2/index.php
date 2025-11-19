@@ -12,5 +12,4 @@ function strcontain($string, $chaine){
     return "No";
 }
  
-echo strcontain("CEF", "ABCEFGHI")
-?>
+echo strcontain("CEF", "ABCEFGHI");
