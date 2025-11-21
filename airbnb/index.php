@@ -51,7 +51,7 @@ $nb_pages = ceil($total / $limite);
 <hr>
 <form method="GET">
     <label>Trier par : </label>
-    <select name="tri" onchange="this.form.submit()">
+    <select name="tri" >
         
         <option value="name" <?php if($tri == 'name') { echo 'selected'; } ?>>Nom</option>
         <option value="ville" <?php if($tri == 'ville') { echo 'selected'; } ?>>Ville</option>
