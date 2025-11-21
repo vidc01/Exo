@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
     } elseif (empty($_POST['password'])) {
         echo "<b>Erreur : Le champ password de l'inscription est vide.</b><br/>"; 
     } else {
-        
+
         $check = $dbh->prepare("SELECT * FROM user WHERE username = :username"); 
         $check->execute(['username' => $_POST['username']]); 
         if ($check->rowCount() > 0) { 
@@ -38,9 +38,20 @@ if (isset($_POST['register'])) {
                 'password' => $hash,
             ]);
             echo "<b>Votre inscription est valide</b>";
+            echo '<form method="post" action="">
+        <input type="hidden" name="username_to_delete" value="' . htmlspecialchars($_POST['username']) . '">
+        <input type="submit" name="delete_user" value="Supprimer cet utilisateur">
+      </form>';
+
         }
     }
 }
+if (isset($_POST['delete_user'])) {
+    $sth = $dbh->prepare("DELETE FROM user WHERE username = :username");
+    $sth->execute(['username' => $_POST['username_to_delete']]);
+    echo "<b>L'utilisateur " . htmlspecialchars($_POST['username_to_delete']) . " a été supprimé.</b><br/>";
+}
+
 ?>
 
 <h1>Connexion</h1>
@@ -80,6 +91,9 @@ $query=$dbh->prepare("SELECT * FROM user");
 $query->execute();
  
 $data=$query->fetchAll();
- 
- 
-var_dump($data);
+//var_dump($data);
+echo "<h2>Liste des utilisateurs enregistrés :</h2>";
+foreach($data as $row){
+    echo " - ".htmlspecialchars($row['username'])."<br/>";
+}
+?>
