@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c3d6e9;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.logement {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.logement-image {
+    width: 200px;
+    height: 150px;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.logement-details {
+    flex: 1;
+}
+
+.proprietaire-image {
+    margin-left: 15px;
+}
+
+.proprietaire-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.pas-de-photo {
+    width: 200px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #999;
+    margin-right: 15px;
+}
+.proprietaire-image .pas-de-photo {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+    margin-left: 15px;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+.page-active {
+    color: red;
+    font-weight: bold;
+    margin: 0 5px;
+}
+.page-link {
+    margin: 0 5px;
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
